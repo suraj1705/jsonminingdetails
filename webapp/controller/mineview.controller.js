@@ -6,11 +6,11 @@ sap.ui.define([
     "sap/ui/model/FilterOperator"
 ], (BaseController, JSONModel, Sorter, Filter, FilterOperator) => {
     "use strict";
+    
 
     return BaseController.extend("app.miningjson.controller.mineview", {
         onInit() {
             // var oModel = new JSONModel();
-            // oModel.loadData("/model/mockData/MiningData.json");
             // this.getView().setModel(oModel, "MiningModel");
         },
         onDetailView: function () {
