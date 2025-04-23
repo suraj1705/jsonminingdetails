@@ -10,8 +10,7 @@ sap.ui.define([
 
     return BaseController.extend("app.miningjson.controller.mineview", {
         onInit() {
-            // var oModel = new JSONModel();
-            // this.getView().setModel(oModel, "MiningModel");
+            
         },
         onDetailView: function () {
             // Get the router object
