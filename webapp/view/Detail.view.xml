@@ -1,0 +1,133 @@
+<mvc:View
+    controllerName="app.miningjson.controller.Detail"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        title="Detail"
+        showNavButton="true"
+        navButtonPress="onListView"
+    >
+        <content>
+            <f:SimpleForm>
+        
+                <Label text="Location ID" class="bold-class" design="Bold"  />
+                <Text text="{miningModel>LocationID}"  />
+                <Label text="Location Des" class="bold-class" design="Bold" />
+                <Text text="{miningModel>LocationDescription}" />
+                <Label text="Resource Allocated" class="bold-class" design="Bold"/>
+                <Text text="{miningModel>MiningResourceAllocated}" />
+                <Label text="Total Cost" class="bold-class" design="Bold" />
+                <Text text="{miningModel>TotalCost}" />
+                <Label text="Currency" class="bold-class" design="Bold"/>
+                <Text text="{miningModel>Currency}" />
+                <Label text="Mineral Report" class="bold-class" design="Bold"/>
+                <Text text="{miningModel>ReportOfPossibleMineral}" />
+                <Label text="Number of Drills" class="bold-class" design="Bold"/>
+                <Text text="{miningModel>NumberOfDrillPerformed}" />
+                <Label text="Type of Mineral" class="bold-class" design="Bold"/>
+                <Text text="{miningModel>TypeOfMineralFromLocation}" />
+                <Label text="Man Days" class="bold-class" design="Bold"/>
+                <Text text="{miningModel>ManDays}" />
+                <Label text="Positive Outcome" class="bold-class" design="Bold" />
+                <Text text="{miningModel>ProbabilityOfPositiveOutcome}" />
+                <Label ></Label> 
+                <Image src="{miningModel>image}" width="300px" height="300px" class="imgg" tooltip="Mining Image"/>
+                           
+            </f:SimpleForm>
+            <IconTabBar>
+                <items>
+                    <IconTabFilter icon="sap-icon://information">
+                        <f:SimpleForm>
+                            <Label text="Location Des" class="bold-class" design="Bold" />
+                            <Text text="{miningModel>LocationDescription}" />
+                            <Label text="Location ID" class="bold-class" design="Bold" />
+                            <Text text="{miningModel>LocationID}" />
+                            <Label text="Resource Allocated" class="bold-class" design="Bold"/>
+                            <Text text="{miningModel>MiningResourceAllocated}" />
+                            <Label text="Total Cost" class="bold-class" design="Bold" />
+                            <Text text="{miningModel>TotalCost}" />
+                        </f:SimpleForm>
+                        
+
+                        <!-- <VBox alignItems="Stretch" justifyContent="Center">
+                            <HBox alignContent="Center" >
+                                <Label text="Location ID" />
+                                <Text text="{miningModel>LocationID}" />
+                            </HBox>
+                            <HBox editable="true">
+                                <Label text="Location Description" />
+                                <Text
+                                    text="{miningModel>LocationDescription}"
+                                />
+                            </HBox>
+                            <HBox>
+                                <Label text="Resource Allocated" />
+                                <Text
+                                    text="{miningModel>MiningResourceAllocated}"
+                                />
+                            </HBox>
+                            <HBox>
+                                <Label text="Total Cost" />
+                                <Text text="{miningModel>TotalCost}" />
+                            </HBox>
+                        </VBox> -->
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://detail-view">
+                    
+                        <f:SimpleForm>
+                        <HBox>
+        <Input id="idLocation" width="200px" liveChange="onFilter" placeholder="Location ID" />
+    </HBox>
+    <HBox>
+        <Input id="idMineral" width="200px" liveChange="onFilter" placeholder="Type of Mineral" />
+    </HBox>
+    
+</f:SimpleForm>
+
+
+                        <Table
+                            items="{miningModel>/miningDatas}"
+                            id="idMTable"
+                        >
+                            <columns>
+                                <Column>
+                                    <Text text="Location ID" />
+                                </Column>
+                                <Column>
+                                    <Text text="Location Description" />
+                                </Column>
+                                <Column>
+                                    <Text text="Type of Mineral" />
+                                </Column>
+
+                                <Column>
+                                    <Text text="Total Cost" />
+                                </Column>
+                            </columns>
+
+                            <ColumnListItem>
+                                <cells>
+                                    <Input
+                                        value="{miningModel>LocationID}"
+                                        showValueHelp="true"
+                                        valueHelpRequest="onF4Help"
+                                    />
+                                    <Text
+                                        text="{miningModel>LocationDescription}"
+                                    />
+                                    <Text
+                                        text="{miningModel>TypeOfMineralFromLocation}"
+                                    />
+
+                                    <Text text="{miningModel>TotalCost}" />
+                                </cells>
+                            </ColumnListItem>
+                        </Table>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

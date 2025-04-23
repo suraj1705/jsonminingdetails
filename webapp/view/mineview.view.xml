@@ -1,0 +1,30 @@
+<mvc:View controllerName="app.miningjson.controller.mineview"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Mining View">
+        <headerContent>
+            <Button icon="sap-icon://sort" press="onSort"/>
+        </headerContent>
+        <subHeader>
+            <OverflowToolbar>
+                <SearchField search="onSearch" liveChange="onSearch"/>
+            </OverflowToolbar>
+        </subHeader>
+        <content>
+            <List items="{miningModel>/miningDatas}" id="idListCtrl" mode="SingleSelectMaster" selectionChange="onItemSelect">
+                <items>
+                    <ObjectListItem icon="{miningModel>image}" title="{miningModel>TypeOfMineralFromLocation}" number="{miningModel>LocationID}" >
+                        <attributes>
+                            <ObjectAttribute text="{miningModel>LocationDescription}"/>
+                            <ObjectAttribute text="{miningModel>TotalCost}" title="Total Cost"/>
+                        </attributes>
+                        <firstStatus>
+                            <ObjectStatus text="{miningModel>ProbabilityOfPositiveOutcome}" state="{= ${miningModel>ProbabilityOfPositiveOutcome} === 'High' ? 'Success' : 'Error'}" class="sapMObjectStatus"/>
+                        </firstStatus>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+        
+    </Page>
+</mvc:View>

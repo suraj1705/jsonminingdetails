@@ -1,0 +1,8 @@
+<mvc:View controllerName="app.miningjson.controller.Empty"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    	xmlns:f="sap.ui.layout.form">
+   	<Page id="idEmpty" title="Empty View">
+	<Image src="https://i.makeagif.com/media/10-07-2017/tY6cIL.gif" width="99%" height="98%"></Image>
+	</Page>
+</mvc:View>
